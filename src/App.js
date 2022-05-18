@@ -5,6 +5,8 @@ import SignUp from "./pages/SignUp";
 import Quiz from "./pages/Quiz";
 import ChooseQuiz from "./pages/ChooseQuiz";
 import Result from "./pages/Result"
+import TakeBreak from "./pages/TakeBreak";
+import Edit from "./pages/Edit";
 /* import QuizDetail from "./components/QuizDetail"; */
 export default function App() {
   return (
@@ -12,10 +14,8 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/choose-quiz" element={<ChooseQuiz />} />
-          <Route path="/quiz" element={<Quiz />}></Route>
-          <Route path="/result" element={<Result />}></Route>
+          <Route path ="/takeBreak" element={<TakeBreak />} />
+          <Route path = "/edit" element={<Edit />} />
         </Routes>
         {/* <Link to={`/about?name=mien&age=20`}>about</Link> */}
       </BrowserRouter>
