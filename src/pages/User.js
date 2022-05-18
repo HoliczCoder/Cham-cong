@@ -52,7 +52,7 @@ export default function User() {
           {showDate.map((item, index) => {
             return (
               <div key={index} className=" m-5">
-                <Link to={`/edit?${1}`}>
+                <Link to={`/edit/${1}`}>
                   <button>
                     <div className="m-2 rounded-full w-5 h-5 bg-green-500"></div>
                   </button>

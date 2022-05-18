@@ -6,6 +6,7 @@ import Quiz from "./pages/Quiz";
 import ChooseQuiz from "./pages/ChooseQuiz";
 import Result from "./pages/Result";
 import User from "./pages/User";
+import TakeBreak from "./pages/TakeBreak";
 import Edit from "./pages/Edit";
 /* import QuizDetail from "./components/QuizDetail"; */
 export default function App() {
@@ -19,7 +20,8 @@ export default function App() {
           <Route path="/quiz" element={<Quiz />}></Route>
           <Route path="/result" element={<Result />}></Route>
           <Route path="/user" element={<User />}></Route>
-          <Route path="/edit:id" element={<Edit />}></Route>
+          <Route path="/edit/:id" element={<Edit />}></Route>
+          <Route path="/takeBreak" element={<TakeBreak />} />
         </Routes>
         {/* <Link to={`/about?name=mien&age=20`}>about</Link> */}
       </BrowserRouter>
