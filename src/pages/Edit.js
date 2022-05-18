@@ -26,7 +26,7 @@ const Edit = () => {
 
   return (
     <div>
-      <div>Param o day la {param``}</div>
+      <div>Param o day la {param}</div>
       <button className="px-3 float-right mt-5 py-2 text-sm text-blue-100 bg-blue-600 rounded">
         <Link to={"/user"}>Trở về</Link>
       </button>

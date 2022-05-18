@@ -4,8 +4,9 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function User() {
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
   const [value, onChange] = useState(new Date());
-  const [date, setDate] = useState([]);
   const [showDate, setShowDate] = useState([0]);
   const newCalendar = [];
   const formatDate = (date, string) => {
@@ -63,8 +64,24 @@ export default function User() {
           })}
         </div>
       </div>
-      <div className="flex flex-row items-center justify-center text-3xl font-bold">
-        Chấm công
+      <div className="flex flex-col items-center">
+        <div className="w-1/2">
+          <input
+            type="date"
+            className="shadow my-2 appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+          />
+          <input
+            type="time"
+            className="shadow my-2 appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker"
+            value={time}
+            onChange={(e) => setTime(e.target.value)}
+          />
+          <div className="font-semibold text-3xl flex justify-center">
+            <button className="bg-red-500">Chấm công</button>
+          </div>
+        </div>
       </div>
     </div>
   );

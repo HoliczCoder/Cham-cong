@@ -32,33 +32,34 @@ const TakeBreak = () => {
 
   return (
     <div>
-      <div class="h-100 w-full flex items-center justify-center bg-teal-lightest font-sans">
-        <div class="bg-white rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
-          <div class="mb-4">
-            <h1 class="text-grey-darkest text-center" >Xin đi muộn</h1>
-            <div class=" mt-4">
+      <div className="h-100 w-full flex items-center justify-center bg-teal-lightest font-sans">
+        <div className="bg-white rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
+          <div className="mb-4">
+            <h1 className="text-grey-darkest text-center">Xin đi muộn</h1>
+            <div className=" mt-4">
               <input
                 type="date"
-                class="shadow my-2 appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker"
+                className="shadow my-2 appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker"
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
               />
               <input
                 type="time"
-                class="shadow my-2 appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker"
+                className="shadow my-2 appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker"
                 value={time}
                 onChange={(e) => setTime(e.target.value)}
               />
               <input
                 type="text"
-                class="shadow my-2 appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker"
+                className="shadow my-2 appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker"
                 placeholder="message"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
               />
-              <button 
-              onClick={() => handleSubmit()}
-              class="flex-no-shrink p-2 border-2 rounded text-teal border-teal  hover:bg-teal">
+              <button
+                onClick={() => handleSubmit()}
+                className="flex-no-shrink p-2 border-2 rounded text-teal border-teal  hover:bg-teal"
+              >
                 Submit
               </button>
             </div>
