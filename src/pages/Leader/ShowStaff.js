@@ -3,12 +3,13 @@ import Calendar from "react-calendar";
 import { useNavigate } from "react-router-dom";
 import StaffComponent from "../../components/StaffComponent";
 
+
 export default function ShowStaff() {
-  const [date, setDate] = useState(new Date());
   let navigate = useNavigate();
+  const [listStaff, setListStaff] = useState([]);
+  const [showCalendar, setShowCalendar] = useState(false);
 
   const editDot = (day) => {
-    console.log(day);
     navigate(`/edit-check/${day}`);
   };
 
@@ -27,7 +28,10 @@ export default function ShowStaff() {
           <div className="text-xl font-bold">Danh sách nhân viên</div>
           <ul className="w-full space-y-6">
             <li>
-              <StaffComponent showNotification={()=>navigate(`/notification`)} />
+              <StaffComponent
+                showNotification={() => navigate(`/notification`)}
+                showCalendar={() => setShowCalendar(true)}
+              />
             </li>
             <li>
               <StaffComponent />
@@ -38,33 +42,37 @@ export default function ShowStaff() {
           </ul>
         </div>
 
-        <div>
-          <Calendar
-            onChange={setDate}
-            value={date}
-            onClickDay={(value, event) => editDot(value.getDate())}
-            tileClassName={({ date, view }) => {
-              if (view === "month" && date.getDate() === 20) {
-                return "text-green-500";
-              }
-            }}
-          />
-          <div className="space-y-4">
-            <div className="text-2xl font-bold">Chú thích</div>
-            <div className="flex items-center space-x-6">
-              <div className="w-8 h-8 bg-green-500"> </div>
-              <div>Đã duyệt</div>
-            </div>
-            <div className="flex items-center space-x-6">
-              <div className="w-8 h-8 bg-yellow-500"> </div>
-              <div>Hủy duyệt</div>
-            </div>
-            <div className="flex items-center space-x-6">
-              <div className="w-8 h-8 bg-red-600"> </div>
-              <div>Ngày nghỉ</div>
+        {showCalendar && (
+          <div>
+            <Calendar
+              showNavigation={false}
+              onClickDay={(value, event) => editDot(value.getDate())}
+              tileClassName={({ date, view }) => {
+                if (view === "month" && date.getDate() === 24) {
+                  return "text-green-500 bg-red-500";
+                }
+                if (view === "month" && date.getDate() === 11) {
+                  return "text-green-500";
+                }
+              }}
+            />
+            <div className="space-y-4">
+              <div className="text-2xl font-bold">Chú thích</div>
+              <div className="flex items-center space-x-6">
+                <div className="w-8 h-8 bg-green-500"> </div>
+                <div>Hoàn thành đủ ngày công</div>
+              </div>
+              <div className="flex items-center space-x-6">
+                <div className="w-8 h-8 bg-yellow-500"> </div>
+                <div>Làm không đủ ngày công</div>
+              </div>
+              <div className="flex items-center space-x-6">
+                <div className="w-8 h-8 bg-red-600"> </div>
+                <div>Ngày nghỉ</div>
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );
