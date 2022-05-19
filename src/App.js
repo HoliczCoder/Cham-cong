@@ -21,7 +21,7 @@ export default function App() {
           <Route path="/result" element={<Result />}></Route>
           <Route path="/user" element={<User />}></Route>
           <Route path="/edit/:id" element={<Edit />}></Route>
-          <Route path="/takeBreak" element={<TakeBreak />} />
+          <Route path="/takeBreak/" element={<TakeBreak />} />
         </Routes>
         {/* <Link to={`/about?name=mien&age=20`}>about</Link> */}
       </BrowserRouter>

@@ -142,6 +142,9 @@ const Login = () => {
                           <button className="underline ml-1">Register</button>
                         </Link>
                       </p>
+                      <Link to = "/user">
+                        <button className="" type="button">Ve trang user</button>
+                      </Link>
                     </div>
                   </form>
                 </div>

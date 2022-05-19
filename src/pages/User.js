@@ -8,6 +8,7 @@ export default function User() {
   const [time, setTime] = useState("");
   const [value, onChange] = useState(new Date());
   const [showDate, setShowDate] = useState([0]);
+  let navigate = useNavigate()
   const newCalendar = [];
   const formatDate = (date, string) => {
     const newString = date.getDate();
@@ -26,10 +27,15 @@ export default function User() {
     //console.log("gia tri la", newfilterCalendar);
     setShowDate([...newfilterCalendar]);
   }, [newCalendar]);
+
+  const logout = () => {
+    navigate("/")
+  }
+
   return (
     <div>
       <div className="flex flex-row items-center justify-end">
-        <div className="m-2">Đăng xuất</div>
+        <button onClick = {logout} className="m-2">Đăng xuất</button>
         <div className="m-2">Thông báo</div>
       </div>
       <div className="flex flex-row items-center justify-center">
@@ -63,6 +69,12 @@ export default function User() {
             );
           })}
         </div>
+      </div>
+      <div>
+        <Link to = "/takebreak">
+          <butotn className="" type = "button">Xin đi muộn</butotn>
+        </Link>
+        
       </div>
       <div className="flex flex-col items-center">
         <div className="w-1/2">
