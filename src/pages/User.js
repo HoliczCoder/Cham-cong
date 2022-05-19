@@ -39,7 +39,7 @@ export default function User() {
         <div className="m-2">Thông báo</div>
       </div>
       <div className="flex flex-row items-center justify-center">
-        <div className="bg-red-500 w-1/2 h-1/2 m-10 ">
+        <div className="bg-red-500 w-1/3 h-1/3 m-10 ">
           <Calendar
             onChange={onChange}
             onClickDay={(e) => {
